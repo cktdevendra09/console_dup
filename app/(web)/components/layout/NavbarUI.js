@@ -36,7 +36,7 @@ export default function NavbarUI() {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex md:items-center md:space-x-4">
-            {["Blog", "Portfolio", "About", "Contact"].map((item) => (
+            {/* {["Blog", "Portfolio", "About", "Contact"].map((item) => (
               <a
                 key={item}
                 href="#"
@@ -44,10 +44,18 @@ export default function NavbarUI() {
               >
                 {item}
               </a>
-            ))}
+            ))} */}
+
+
+            <a href="#" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">PortFolio</a>
+            <a href="#" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Topics</a>
+            <a href="#" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Doubts</a>
+            <a href="#" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Code Contest</a>
+            <a href="#" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 bg-gray-200">SignIn</a>
+            
 
             {/* "More" dropdown */}
-            <div className="relative">
+            {/* <div className="relative">
               <button
                 onClick={() => setMoreOpen(!moreOpen)}
                 className="flex items-center px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200"
@@ -75,7 +83,22 @@ export default function NavbarUI() {
                   <DropdownItem title="Analytics" description="View your stats" />
                 </div>
               )}
-            </div>
+            </div> */}
+
+
+             {/* <div className="flex flex-wrap gap-4"> */}
+                {/* View our work button */}
+                {/* <a href="#" className="px-4 py-2 bg-black text-white rounded-full font-medium hover:bg-black/90 transition-all duration-300 group relative overflow-hidden">
+                  <span className="relative z-10">View our work</span>
+                  <span className="absolute inset-0 bg-white/5 group-hover:bg-white/10 transition-all duration-500"></span>
+                </a> */}
+
+                {/* About studio button */}
+                {/* <a href="#" className="px-4 py-2 border border-black/10 rounded-full font-medium hover:border-black/30 transition-all duration-300 group relative overflow-hidden">
+                  <span className="relative z-10">About studio</span>
+                  <span className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition-all duration-500"></span>
+                </a> */}
+              {/* </div> */}
           </nav>
         </div>
       </div>
