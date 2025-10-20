@@ -1,16 +1,28 @@
-export default function DashboardLayout({ children }) {
-  return (
-    <div className="flex min-h-screen">
-      {/* Sidebar */}
-      <aside className="w-64 bg-gray-900 text-white p-6">
-        📊 Sidebar Menu
-      </aside>
+'use client';
+import "./styles/globals.css";
+import React, { useState } from "react";
+import Sidebar from "./components/layout/sidebar/Sidebar";
+import Header from "./components/layout/header/Header";
 
-      {/* Main Section */}
-      <div className="flex-1">
-        <header className="bg-gray-200 p-4">👤 Dashboard Header</header>
-        <main className="p-6">{children}</main>
-      </div>
-    </div>
+export default function RootLayout({ children }) {
+  const [open, setOpen] = useState(false);
+  return (
+    
+      <>
+
+        <div className="min-h-screen bg-gray-50 text-gray-900">      
+              <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-4 md:grid-cols-[18rem_1fr]">
+                <Sidebar open={open} onClose={() => setOpen(false)} />
+                <main className="space-y-4">
+                  <div className="">
+                    <Header onMenu={() => setOpen(true)} />
+                  </div>          
+
+                  {children}
+                </main>
+              </div>
+            </div>
+      </>
+    
   );
 }
