@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import { APP_CONFIG } from "../../utils/Constants";
+import Link from "next/link";
 
 export default function NavbarUI() {
   const [open, setOpen] = useState(false); // mobile off-canvas
@@ -13,12 +14,12 @@ export default function NavbarUI() {
       {/* Top Navbar */}
       <div className="w-full text-gray-700 bg-white shadow-md">
         <div className="flex items-center justify-between max-w-screen-xl px-4 py-4 mx-auto md:px-6 lg:px-8">
-          <a
-            href="#"
+          <Link
+            href="/"
             className="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg focus:outline-none focus:shadow-outline"
           >
             {APP_CONFIG.PROJECT_NAME}
-          </a>
+          </Link>
 
           {/* Hamburger Button */}
           <button
@@ -47,11 +48,12 @@ export default function NavbarUI() {
             ))} */}
 
 
-            <a href="#" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">PortFolio</a>
-            <a href="#" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Topics</a>
-            <a href="#" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Doubts</a>
-            <a href="#" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Code Contest</a>
-            <a href="#" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 bg-gray-200">SignIn</a>
+            <Link href="/" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Home</Link>
+            <Link href="/portfolio" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">PortFolio</Link>
+            <Link href="/topics" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Topics</Link>
+            <Link href="/doubts" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Doubts</Link>
+            <Link href="/code-contest" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Code Contest</Link>
+            <Link href="/auth" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 bg-gray-200">SignIn</Link>
             
 
             {/* "More" dropdown */}
