@@ -1,17 +1,21 @@
 "use client";
 import React, { useState } from "react";
 
-const ProfileAddUpdate = () => {
+const ProfileUpdatePage = () => {
   const [profile, setProfile] = useState({
-    name: "Devendra Kumar",
-    role: "Software Developer",
-    location: "Noida, India",
-    about: "Passionate software developer with experience in Java, Spring Boot, React.js, and Next.js.",
+    name: "Jane Doe", // default name
+    role: "Owner at Her Company Inc.",
+    location: "Beech Creek, PA, USA",
+    about:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non deserunt.",
+    email: "jane@example.com", // default email
+    birthday: "Feb 06, 1998",
+    contact: "+11 998001001",
   });
 
-  const [image, setImage] = useState(
-    "https://avatars2.githubusercontent.com/u/24622175?s=60&v=4"
-  );
+  const defaultImage =
+    "https://images.unsplash.com/photo-1759675795062-a657fcb278b1?ixlib=rb-4.1.0&auto=format&fit=crop&w=1600&q=80";
+  const [image, setImage] = useState(defaultImage);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,97 +34,111 @@ const ProfileAddUpdate = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center px-4 py-10 bg-gray-100 min-h-screen">
-      <div className="relative flex w-full max-w-4xl flex-col md:flex-row rounded-xl bg-white text-gray-700 shadow-lg overflow-hidden">
-        
-        {/* Optional Image Section */}
-        <div className="hidden md:block md:w-2/5 bg-gray-100 flex items-center justify-center">
-          <img
-            src={image}
-            alt="Profile"
-            className="h-full w-full object-cover"
-          />
+    <div className="bg-gray-100 min-h-screen p-5">
+      <div className="container mx-auto md:flex md:space-x-4">
+        {/* Left Sidebar */}
+        <div className="w-full md:w-3/12 space-y-4">
+          <div className="bg-white p-3 border-t-4 border-green-400 rounded shadow relative">
+            <label className="cursor-pointer relative block mx-auto w-40 h-40">
+              <img
+                src={image}
+                alt="Profile"
+                className="h-40 w-40 mx-auto rounded-full object-cover"
+              />
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+              />
+            </label>
+
+            <h1 className="text-gray-900 font-bold text-xl text-center mt-2">
+              {profile.name}
+            </h1>
+            <h3 className="text-gray-600 font-semibold text-center text-sm">
+              {profile.role}
+            </h3>
+            <p className="text-gray-500 text-sm mt-1 text-center">{profile.email}</p>
+          </div>
         </div>
 
-        {/* Form Section */}
-        <div className="p-8 w-full md:w-3/5">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Update Profile
-            </h3>
-
-            {/* Profile Image Upload */}
-            <div className="flex items-center justify-center mb-4">
-              <label className="cursor-pointer">
-                <img
-                  src={image}
-                  alt="Profile"
-                  className="h-24 w-24 rounded-full object-cover border-2 border-gray-300 hover:opacity-80 transition"
+        {/* Right Content */}
+        <div className="w-full md:w-9/12 space-y-4">
+          {/* Profile Update Form */}
+          <div className="bg-white p-5 shadow-sm rounded-sm">
+            <h3 className="text-lg font-semibold mb-4">Update Profile</h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="name"
+                  value={profile.name}
+                  onChange={handleChange}
+                  placeholder="Full Name"
+                  className="border border-gray-300 rounded-lg p-2 w-full focus:outline-none focus:border-black"
                 />
                 <input
-                  type="file"
-                  accept="image/*"
-                  className="hidden"
-                  onChange={handleImageChange}
+                  type="text"
+                  name="email"
+                  value={profile.email}
+                  onChange={handleChange}
+                  placeholder="Email"
+                  className="border border-gray-300 rounded-lg p-2 w-full focus:outline-none focus:border-black"
                 />
-              </label>
-            </div>
-
-            {/* Name */}
-            <input
-              type="text"
-              name="name"
-              value={profile.name}
-              onChange={handleChange}
-              placeholder="Full Name"
-              className="border border-gray-300 rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-black transition"
-            />
-
-            {/* Role */}
-            <input
-              type="text"
-              name="role"
-              value={profile.role}
-              onChange={handleChange}
-              placeholder="Role (e.g. Software Developer)"
-              className="border border-gray-300 rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-black transition"
-            />
-
-            {/* Location */}
-            <input
-              type="text"
-              name="location"
-              value={profile.location}
-              onChange={handleChange}
-              placeholder="Location"
-              className="border border-gray-300 rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-black transition"
-            />
-
-            {/* About */}
-            <textarea
-              name="about"
-              value={profile.about}
-              onChange={handleChange}
-              placeholder="About yourself"
-              rows="4"
-              className="border border-gray-300 rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-black transition"
-            />
-
-            {/* Save Button */}
-            <div className="flex justify-end">
+                <input
+                  type="text"
+                  name="role"
+                  value={profile.role}
+                  onChange={handleChange}
+                  placeholder="Role"
+                  className="border border-gray-300 rounded-lg p-2 w-full focus:outline-none focus:border-black"
+                />
+                <input
+                  type="text"
+                  name="birthday"
+                  value={profile.birthday}
+                  onChange={handleChange}
+                  placeholder="Birthday"
+                  className="border border-gray-300 rounded-lg p-2 w-full focus:outline-none focus:border-black"
+                />
+                <input
+                  type="text"
+                  name="contact"
+                  value={profile.contact}
+                  onChange={handleChange}
+                  placeholder="Contact"
+                  className="border border-gray-300 rounded-lg p-2 w-full focus:outline-none focus:border-black"
+                />
+                <input
+                  type="text"
+                  name="location"
+                  value={profile.location}
+                  onChange={handleChange}
+                  placeholder="Location"
+                  className="border border-gray-300 rounded-lg p-2 w-full focus:outline-none focus:border-black"
+                />
+              </div>
+              <textarea
+                name="about"
+                value={profile.about}
+                onChange={handleChange}
+                placeholder="About yourself"
+                rows="4"
+                className="border border-gray-300 rounded-lg p-2 w-full focus:outline-none focus:border-black"
+              />
               <button
                 type="submit"
-                className="px-6 py-3 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all shadow-md"
+                className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
               >
-                Save
+                Save Changes
               </button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-
       </div>
     </div>
   );
 };
 
-export default ProfileAddUpdate;
+export default ProfileUpdatePage;

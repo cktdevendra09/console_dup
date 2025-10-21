@@ -4,9 +4,9 @@ const DASHBOARD_PREFIX = "/dashboard" ;
 export const USER_LINKS = {
   DASHBOARD: DASHBOARD_PREFIX,  
   PROFILE: DASHBOARD_PREFIX + "/personal-information",  
-  PORTFOLIO: DASHBOARD_PREFIX+ "portfolio",  
-  BLOGS: DASHBOARD_PREFIX + "blogs",  
-  TOPICS: DASHBOARD_PREFIX + "topics",  
+  PORTFOLIO: DASHBOARD_PREFIX+ "/portfolio",  
+  BLOGS: DASHBOARD_PREFIX + "/blogs",  
+  TOPICS: DASHBOARD_PREFIX + "/topics",  
 };
 
 
