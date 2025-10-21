@@ -39,7 +39,7 @@ const ProfileAddUpdate = () => {
       <div className="relative flex w-full max-w-4xl flex-col md:flex-row rounded-xl bg-white text-gray-700 shadow-lg overflow-hidden">
         
         {/* Optional Image Section */}
-        <div className="hidden md:block md:w-2/5 bg-gray-100 flex items-center justify-center relative">
+        <div className="hidden md:block md:w-2/5 bg-gray-100  items-center justify-center relative">
           <img
             src={image}
             alt="Profile"
