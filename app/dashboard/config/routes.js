@@ -1,11 +1,19 @@
 
+const DASHBOARD_PREFIX = "/dashboard" ;
 
 export const USER_LINKS = {
-  DASHBOARD: "/dashboard",  
-  PROFILE: "/dashboard/personal-information",  
-  PORTFOLIO: "/dashboard/portfolio",  
-  BLOGS: "/dashboard/blogs",  
-  TOPICS: "/dashboard/topics",  
+  DASHBOARD: DASHBOARD_PREFIX,  
+  PROFILE: DASHBOARD_PREFIX + "/personal-information",  
+  PORTFOLIO: DASHBOARD_PREFIX+ "portfolio",  
+  BLOGS: DASHBOARD_PREFIX + "blogs",  
+  TOPICS: DASHBOARD_PREFIX + "topics",  
+};
+
+
+export const DASHBOARD_LINKS = {
+  PROFILE_ADDUPDATE: DASHBOARD_PREFIX+"/personal-information/add/profile",    
+  EDUCATION_ADDUPDATE: DASHBOARD_PREFIX+"/personal-information/add/education",    
+  EXPERIENCE_ADDUPDATE: DASHBOARD_PREFIX+"/personal-information/add/experience",    
 };
 
 export const AUTH= {
