@@ -1,20 +1,30 @@
 
 const DASHBOARD_PREFIX = "/dashboard" ;
+const PROFILE_MENU = "/profile";
+const CHALLENGE_MENU = "/challenge";
 
 export const USER_LINKS = {
   DASHBOARD: DASHBOARD_PREFIX,  
-  PROFILE: DASHBOARD_PREFIX + "/personal-information",  
+  PROFILE: DASHBOARD_PREFIX + PROFILE_MENU,  
   PORTFOLIO: DASHBOARD_PREFIX+ "/portfolio",  
   BLOGS: DASHBOARD_PREFIX + "/blogs",  
   TOPICS: DASHBOARD_PREFIX + "/topics",  
 };
 
 
+
 export const DASHBOARD_LINKS = {
-  PROFILE_ADDUPDATE: DASHBOARD_PREFIX+"/personal-information/add/profile",    
-  EDUCATION_ADDUPDATE: DASHBOARD_PREFIX+"/personal-information/add/education",    
-  EXPERIENCE_ADDUPDATE: DASHBOARD_PREFIX+"/personal-information/add/experience",    
+  PROFILE_ADDUPDATE: DASHBOARD_PREFIX+ PROFILE_MENU +"/add/profile",    
+  EDUCATION_ADDUPDATE: DASHBOARD_PREFIX+PROFILE_MENU+"/add/education",    
+  EXPERIENCE_ADDUPDATE: DASHBOARD_PREFIX+PROFILE_MENU+"/add/experience",    
+
+  CHALLENGE_ADDNEW : DASHBOARD_PREFIX+CHALLENGE_MENU+"/add",    
 };
+
+
+
+
+
 
 export const AUTH= {
   LOGIN: "/auth/login",

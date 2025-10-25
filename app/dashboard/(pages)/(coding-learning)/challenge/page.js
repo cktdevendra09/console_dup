@@ -1,4 +1,5 @@
 import { AddButton } from "@/app/dashboard/components/Comman/ADD_BUTTON";
+import { DASHBOARD_LINKS } from "@/app/dashboard/config/routes";
 
 export default function Challenge() {
   return (
@@ -7,7 +8,7 @@ export default function Challenge() {
       {/* Search */}
       
       <div className="w-full flex justify-end px-2 mt-2">        
-        <AddButton> </AddButton>
+        <AddButton redirectTo={DASHBOARD_LINKS.CHALLENGE_ADDNEW}> </AddButton>
         <div className="w-full sm:w-64 inline-block relative mt-2">
           <input
             type="text"

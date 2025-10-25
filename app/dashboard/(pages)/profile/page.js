@@ -40,7 +40,7 @@ const page = () => {
       <div className="container mx-auto md:flex md:space-x-4">
         {/* Left Sidebar */}
         <div className="w-full md:w-3/12 space-y-4">
-          <div className="bg-white p-3 border-t-4 border-green-400 rounded shadow">
+          <div className="bg-white p- rounded shadow p-5">
             <div className="relative">
               <img
                 src="https://images.unsplash.com/photo-1759675795062-a657fcb278b1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1601"
@@ -50,27 +50,11 @@ const page = () => {
             </div>
             <h1 className="text-gray-900 font-bold text-xl text-center mt-2">
               {profile.name} 
-              <EDIT_BUTTON redirectTo={DASHBOARD_LINKS.PROFILE_ADDUPDATE} />
-              
             </h1>
             <h3 className="text-gray-600 font-semibold text-center text-sm">
               {profile.role}
             </h3>
-            <p className="text-gray-500 text-sm mt-2 text-center">{profile.about}</p>
-            <ul className="bg-gray-100 text-gray-600 py-2 px-3 mt-3 divide-y rounded shadow-sm">
-              <li className="flex items-center py-2">
-                <span>Status</span>
-                <span className="ml-auto">
-                  <span className="bg-green-500 py-1 px-2 rounded text-white text-sm">
-                    Active
-                  </span>
-                </span>
-              </li>
-              <li className="flex items-center py-2">
-                <span>Member since</span>
-                <span className="ml-auto">Nov 07, 2016</span>
-              </li>
-            </ul>
+            <p className="text-gray-500 text-sm mt-2 text-center">{profile.about}</p>            
           </div>
         </div>
 
@@ -94,7 +78,7 @@ const page = () => {
                 />
               </svg>
               <span className="tracking-wide">About
-                <EDIT_BUTTON redirectTo=""/>
+                <EDIT_BUTTON redirectTo={DASHBOARD_LINKS.PROFILE_ADDUPDATE}/>
               </span>
             </div>
             <div className="text-gray-700 text-sm grid md:grid-cols-2 gap-2">
