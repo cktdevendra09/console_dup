@@ -1,5 +1,7 @@
 "use client";
 
+import { WEB_PAGES } from "@/app/(web)/config/routes";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function CreateNewPasswordPage() {
@@ -65,12 +67,11 @@ export default function CreateNewPasswordPage() {
             </div>
 
             {/* Submit Button */}
-            <button
-              type="submit"
+            <Link href={WEB_PAGES.WEB_HOME}
               className="w-full px-4 py-2 font-semibold text-white bg-gray-900 rounded-lg shadow hover:bg-black focus:ring-2 focus:ring-gray-700 focus:outline-none transition"
             >
               Set New Password
-            </button>
+            </Link>
           </form>
 
           {/* Back to Login */}

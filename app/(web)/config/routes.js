@@ -1,5 +1,6 @@
 
 export const WEB_PAGES = {
+  WEB_HOME : "/",
   PORTFOLIO:"/portfolio",
   TOPICS: "/topics",
   DOUBTS: "/doubts",
