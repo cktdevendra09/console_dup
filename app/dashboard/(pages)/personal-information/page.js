@@ -2,6 +2,8 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { DASHBOARD_LINKS } from "../../config/routes";
+import { AddButton } from "../../components/Comman/ADD_BUTTON";
+import { EDIT_BUTTON } from "../../components/Comman/EDIT_BUTTON";
 
 const page = () => {
   const [profile, setProfile] = useState({
@@ -34,7 +36,7 @@ const page = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen p-5">
+    <div className="min-h-screen p-5">
       <div className="container mx-auto md:flex md:space-x-4">
         {/* Left Sidebar */}
         <div className="w-full md:w-3/12 space-y-4">
@@ -47,7 +49,9 @@ const page = () => {
               />              
             </div>
             <h1 className="text-gray-900 font-bold text-xl text-center mt-2">
-              {profile.name} <Link href={DASHBOARD_LINKS.PROFILE_ADDUPDATE}>edit</Link>
+              {profile.name} 
+              <EDIT_BUTTON redirectTo={DASHBOARD_LINKS.PROFILE_ADDUPDATE} />
+              
             </h1>
             <h3 className="text-gray-600 font-semibold text-center text-sm">
               {profile.role}
@@ -89,7 +93,9 @@ const page = () => {
                   d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                 />
               </svg>
-              <span className="tracking-wide">About</span>
+              <span className="tracking-wide">About
+                <EDIT_BUTTON redirectTo=""/>
+              </span>
             </div>
             <div className="text-gray-700 text-sm grid md:grid-cols-2 gap-2">
               <div className="grid grid-cols-2">
@@ -139,7 +145,9 @@ const page = () => {
                       d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                     />
                   </svg>
-                  <span className="tracking-wide">Experience <Link href={DASHBOARD_LINKS.EXPERIENCE_ADDUPDATE}>edit</Link></span>
+                  <span className="tracking-wide">Experience 
+                    <AddButton redirectTo={DASHBOARD_LINKS.EXPERIENCE_ADDUPDATE}></AddButton>                    
+                    </span>
                 </div>
                 <ul className="list-inside space-y-2 text-sm text-gray-700">
                   <li>
@@ -169,7 +177,11 @@ const page = () => {
                       d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
                     />
                   </svg>
-                  <span className="tracking-wide">Education <Link href={DASHBOARD_LINKS.EDUCATION_ADDUPDATE}>edit</Link></span>
+                  <span className="tracking-wide">Education 
+                    {/* <Link href={DASHBOARD_LINKS.EDUCATION_ADDUPDATE}>edit</Link> */}
+                    <AddButton redirectTo={DASHBOARD_LINKS.EDUCATION_ADDUPDATE} />
+
+                    </span>
                 </div>
                 <ul className="list-inside space-y-2 text-sm text-gray-700">
                   <li>

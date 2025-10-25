@@ -1,10 +1,13 @@
+import { AddButton } from "@/app/dashboard/components/Comman/ADD_BUTTON";
 
 export default function Challenge() {
   return (
     <div className="bg-white pb-4 px-4 rounded-md w-full">            
 
       {/* Search */}
-      <div className="w-full flex justify-end px-2 mt-2">
+      
+      <div className="w-full flex justify-end px-2 mt-2">        
+        <AddButton> </AddButton>
         <div className="w-full sm:w-64 inline-block relative mt-2">
           <input
             type="text"
