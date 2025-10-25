@@ -5,6 +5,7 @@ import Link from "next/link";
 import React from "react";
 
 import { CODING_LEARNING, USER_LINKS } from "@/app/dashboard/config/routes";
+import { WEB_PAGES } from "@/app/(web)/config/routes";
 
 // ✅ Centralized Menu Config
 const MENU_SECTIONS = [
@@ -14,7 +15,8 @@ const MENU_SECTIONS = [
       { name: "Dashboard", href: USER_LINKS.DASHBOARD },
       { name: "Profile", href: USER_LINKS.PROFILE },
       { name: "Portfolio", href: USER_LINKS.PORTFOLIO },
-      { name: "Blogs", href: USER_LINKS.BLOGS },
+      { name: "Topics", href: USER_LINKS.TOPICS },
+      { name: "Doubts", href: USER_LINKS.DOUBTS },      
     ],
   },  
   {
@@ -53,7 +55,7 @@ export default function Sidebar({ open, onClose }) {
         </button>
         <div className="flex items-center gap-2 text-xl font-semibold">
           <span className="grid h-8 w-8 place-items-center rounded-xl bg-gray-900 text-white">C</span>
-          <span>Console</span>
+          <Link href={WEB_PAGES.WEB_HOME}>Console</Link>
         </div>
       </div>
 
@@ -75,7 +77,7 @@ export default function Sidebar({ open, onClose }) {
                         transition-colors duration-300 ease-in-out
                         ${
                           isActive
-                            ? "bg-blue-600 text-white shadow-md"
+                            ? "bg-black text-white shadow-md"
                             : "text-gray-600 hover:bg-gray-100"
                         }`}
                     >

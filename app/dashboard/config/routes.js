@@ -9,6 +9,8 @@ export const USER_LINKS = {
   PORTFOLIO: DASHBOARD_PREFIX+ "/portfolio",  
   BLOGS: DASHBOARD_PREFIX + "/blogs",  
   TOPICS: DASHBOARD_PREFIX + "/topics",  
+  DOUBTS: DASHBOARD_PREFIX + "/doubts",  
+
 };
 
 
