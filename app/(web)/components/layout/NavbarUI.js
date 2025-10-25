@@ -4,6 +4,7 @@
 import { useState } from "react";
 import { APP_CONFIG } from "../../utils/Constants";
 import Link from "next/link";
+import { AUTH, WEB_PAGES } from "../../config/routes";
 
 export default function NavbarUI() {
   const [open, setOpen] = useState(false); // mobile off-canvas
@@ -49,11 +50,11 @@ export default function NavbarUI() {
 
 
             <Link href="/" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Home</Link>
-            <Link href="/portfolio" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">PortFolio</Link>
-            <Link href="/topics" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Topics</Link>
-            <Link href="/doubts" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Doubts</Link>
-            <Link href="/code-contest" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Code Contest</Link>
-            <Link href="/auth" className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 bg-gray-200">SignIn</Link>
+            <Link href={WEB_PAGES.PORTFOLIO} className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">PortFolio</Link>
+            <Link href={WEB_PAGES.TOPICS} className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Topics</Link>
+            <Link href={WEB_PAGES.DOUBTS} className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Doubts</Link>
+            <Link href={WEB_PAGES.CONTESTS} className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200">Code Contest</Link>
+            <Link href={AUTH.LOGIN} className="px-4 py-2 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 bg-gray-200">SignIn</Link>
             
 
             {/* "More" dropdown */}

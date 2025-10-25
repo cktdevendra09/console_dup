@@ -4,17 +4,24 @@ import { AUTH } from "@/app/(web)/config/routes";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function SignInPage() {
+export default function RegisterPage() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Email:", email, "Password:", password);
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+    console.log("Name:", name, "Email:", email, "Password:", password);
+    // TODO: Connect with registration API
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4 bg-gray-50">
+    <div className="flex items-center justify-center min-h-screen p-4 bg-white">
       <div className="flex flex-col overflow-hidden rounded-2xl shadow-xl md:flex-row md:max-w-4xl w-full border border-gray-200">
         
         {/* Left Section */}
@@ -24,9 +31,9 @@ export default function SignInPage() {
             Focus on functionality while we handle the UI design of your digital products.
           </p>
           <div className="mt-8 text-center">
-            <p className="text-sm text-gray-400">Don't have an account?</p>
+            <p className="text-sm text-gray-400">Already have an account?</p>
             <a href="#" className="text-white font-semibold hover:underline">
-              Get Started
+              Log in
             </a>
           </div>
           <p className="mt-6 text-xs text-gray-500 text-center">
@@ -36,10 +43,25 @@ export default function SignInPage() {
 
         {/* Right Section */}
         <div className="p-8 md:flex-1 bg-white">
-          <h3 className="text-2xl font-semibold text-gray-900">Account Login</h3>
+          <h3 className="text-2xl font-semibold text-gray-900">Create Account</h3>
 
           <form onSubmit={handleSubmit} className="flex flex-col mt-6 space-y-5">
             
+            {/* Full Name */}
+            <div className="flex flex-col space-y-1">
+              <label htmlFor="name" className="text-sm font-medium text-gray-700">
+                Full Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-transparent transition bg-white text-gray-900"
+                placeholder="John Doe"
+              />
+            </div>
+
             {/* Email */}
             <div className="flex flex-col space-y-1">
               <label htmlFor="email" className="text-sm font-medium text-gray-700">
@@ -48,7 +70,6 @@ export default function SignInPage() {
               <input
                 type="email"
                 id="email"
-                autoFocus
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-transparent transition bg-white text-gray-900"
@@ -58,14 +79,9 @@ export default function SignInPage() {
 
             {/* Password */}
             <div className="flex flex-col space-y-1">
-              <div className="flex items-center justify-between">
-                <label htmlFor="password" className="text-sm font-medium text-gray-700">
-                  Password
-                </label>
-                <Link href={AUTH.FORGOT_PASSWORD} className="text-sm text-gray-900 hover:underline">
-                  Forgot Password?
-                </Link>
-              </div>
+              <label htmlFor="password" className="text-sm font-medium text-gray-700">
+                Password
+              </label>
               <input
                 type="password"
                 id="password"
@@ -76,64 +92,47 @@ export default function SignInPage() {
               />
             </div>
 
+            {/* Confirm Password */}
+            <div className="flex flex-col space-y-1">
+              <label htmlFor="confirmPassword" className="text-sm font-medium text-gray-700">
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                id="confirmPassword"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-transparent transition bg-white text-gray-900"
+                placeholder="Confirm your password"
+              />
+            </div>
+
             {/* Remember Me */}
             <div className="flex items-center space-x-2">
               <input
                 type="checkbox"
-                id="remember"
+                id="agree"
                 className="w-4 h-4 rounded border-gray-300 focus:ring-2 focus:ring-gray-700 transition"
               />
-              <label htmlFor="remember" className="text-sm text-gray-900 font-medium">
-                Remember me
+              <label htmlFor="agree" className="text-sm text-gray-900 font-medium">
+                I agree to the terms and conditions
               </label>
             </div>
 
-            {/* Login Button */}
+            {/* Sign Up Button */}
             <button
               type="submit"
               className="w-full px-4 py-2 font-semibold text-white bg-gray-900 rounded-lg shadow hover:bg-black focus:ring-2 focus:ring-gray-700 focus:outline-none transition"
             >
-              Log in
+              Sign Up
             </button>
-
-            {/* Divider */}
-            <div className="flex items-center justify-center space-x-2">
-              <span className="h-px bg-gray-300 w-14"></span>
-              <span className="text-sm text-gray-400">or login with</span>
-              <span className="h-px bg-gray-300 w-14"></span>
-            </div>
-
-            {/* Social Login Buttons */}
-            <div className="flex flex-col space-y-3">
-              {/* GitHub */}
-              <a
-                href="#"
-                className="flex items-center justify-center px-4 py-2 space-x-2 border rounded-lg border-gray-700 hover:bg-gray-900 transition"
-              >
-                <svg className="w-5 h-5 text-gray-700 group-hover:text-white" viewBox="0 0 16 16" fill="currentColor">
-                  <path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 ..."/>
-                </svg>
-                <span className="text-gray-700 font-medium group-hover:text-white">GitHub</span>
-              </a>
-
-              {/* Twitter */}
-              <a
-                href="#"
-                className="flex items-center justify-center px-4 py-2 space-x-2 border rounded-lg border-gray-700 hover:bg-gray-900 transition"
-              >
-                <svg className="w-5 h-5 text-gray-700 hover:text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6.29 18.251c7.547 ..."/>
-                </svg>
-                <span className="text-gray-700 font-medium hover:text-white">Twitter</span>
-              </a>
-            </div>
           </form>
 
-          {/* "Create New Account" Link */}
+          {/* "Already have an account?" Link */}
           <p className="mt-6 text-center text-sm text-gray-700">
-            I don’t have an account?{' '}
-            <Link href={AUTH.REGISTER} className="font-semibold hover:underline">
-              Create new
+            Already have an account?{' '}
+            <Link href={AUTH.LOGIN} className="font-semibold hover:underline">
+              Log in
             </Link>
           </p>
         </div>
