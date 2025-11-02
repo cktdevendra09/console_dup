@@ -1,9 +1,23 @@
-import React from 'react'
+import React from "react";
+import DoubtsComp from "../../components/doubts/DoubtsComp";
 
 const Doubts = () => {
   return (
-    <div>Doubts</div>
-  )
-}
+    <div className="container mx-auto p-6">
+      <h1 className="text-2xl font-semibold mb-4 text-gray-800">All Doubts</h1>
 
-export default Doubts
+      {/* Responsive Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        {/* Example: render multiple DoubtsComp */}
+        <DoubtsComp />
+        <DoubtsComp />
+        <DoubtsComp />
+        <DoubtsComp />
+        <DoubtsComp />
+        <DoubtsComp />
+      </div>
+    </div>
+  );
+};
+
+export default Doubts;

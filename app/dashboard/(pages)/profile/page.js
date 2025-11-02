@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import { DASHBOARD_LINKS } from "../../config/routes";
 import { AddButton } from "../../components/Comman/ADD_BUTTON";
 import { EDIT_BUTTON } from "../../components/Comman/EDIT_BUTTON";
+import SkillsComp from "../../components/profileComp/SkillsComp";
+import LanguagesComp from "../../components/profileComp/LanguagesComp";
+import SocialMediaComp from "../../components/profileComp/SocialMediaComp";
 
 const page = () => {
   const [profile, setProfile] = useState({
@@ -56,6 +59,8 @@ const page = () => {
             </h3>
             <p className="text-gray-500 text-sm mt-2 text-center">{profile.about}</p>            
           </div>
+          <LanguagesComp />      
+          <SocialMediaComp />    
         </div>
 
         {/* Right Content */}
@@ -180,6 +185,8 @@ const page = () => {
               </div>
             </div>
           </div>
+
+          <SkillsComp />
         </div>
       </div>
     </div>
