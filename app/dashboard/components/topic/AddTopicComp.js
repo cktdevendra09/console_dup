@@ -13,8 +13,8 @@ const AddTopicComp = () => {
   };
 
   return (
-    <div className="mx-auto px-4 py-8 max-w-xl h-64">
-      <div className="bg-white shadow-2xl rounded-lg overflow-hidden border border-gray-200">
+    <div className="">
+      <div className="bg-white rounded-lg overflow-hidden border border-gray-200">
         {/* Editor */}
         <div className="p-6">
           <input

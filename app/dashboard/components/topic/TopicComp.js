@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function TopicComp() {
   return (
     <div className=" ">
-      <div className="bg-white shadow-2xl rounded-lg mb-6 tracking-wide">
+      <div className="bg-white  rounded-lg mb-6 tracking-wide">
         {/* Image Section */}
         <div className="md:flex-shrink-0">
           <img
@@ -19,15 +19,12 @@ export default function TopicComp() {
 
         {/* Content Section */}
         <div className="px-4 py-2 mt-2">
-          <h2 className="font-bold text-2xl text-gray-800 tracking-normal">
+          <h3 className="font-bold  text-gray-800 tracking-normal">
             My Amazing Journey to the Mountains.
-          </h2>
+          </h3>
 
           <p className="text-sm text-gray-700 px-2 mr-1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-            reiciendis ad architecto at aut placeat quia, minus dolor
-            praesentium officia maxime deserunt porro amet ab debitis deleniti
-            modi soluta similique...
+            Lorem ipsum dolor sit amet consectetur adipisicing elit....
           </p>
 
           {/* Bottom Action Section */}
