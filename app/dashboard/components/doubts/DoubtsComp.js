@@ -8,6 +8,7 @@ import CommentComp from "./CommentComp";
 import { BookmarkIcon, HeartIcon, ChatBubbleOvalLeftIcon, PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import ReplyBoxComp from "./ReplyBoxComp";
 import LikesAndCommentsComp from "./LikesAndCommentsComp";
+import { DASHBOARD_LINKS, USER_LINKS } from "../../config/routes";
 
 
 export default function DoubtsComp() {
@@ -62,7 +63,10 @@ export default function DoubtsComp() {
         </div>
 
         <div className="text-gray-500 text-sm mb-6 mx-3 px-2">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          <Link href={USER_LINKS.DOUBTS+"/slug"}>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          </Link>
+          
         </div>
 
         {/* ACTION BUTTONS */}
@@ -100,10 +104,6 @@ export default function DoubtsComp() {
 
         {/* STATS */}
         <LikesAndCommentsComp />
-        {/* COMMENT SECTION */}      
-        <CommentComp />
-        {/* ADD COMMENT INPUT */}
-        <ReplyBoxComp />
       </div>
     </div>
   );

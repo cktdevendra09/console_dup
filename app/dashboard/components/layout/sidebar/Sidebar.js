@@ -7,32 +7,58 @@ import React from "react";
 import { CODING_LEARNING, USER_LINKS } from "@/app/dashboard/config/routes";
 import { WEB_PAGES } from "@/app/(web)/config/routes";
 
-// ✅ Centralized Menu Config
+import {
+  HomeIcon,
+  UserCircleIcon,
+  BriefcaseIcon,
+  BookOpenIcon,
+  QuestionMarkCircleIcon,
+  FireIcon,
+  TrophyIcon,
+  ClipboardDocumentCheckIcon,
+  Cog6ToothIcon,
+  BellAlertIcon,
+  ArrowRightStartOnRectangleIcon,
+} from "@heroicons/react/24/outline";
+
+// ✅ Centralized Menu Config with Icons
 const MENU_SECTIONS = [
   {
     title: "",
     items: [
-      { name: "Dashboard", href: USER_LINKS.DASHBOARD },
-      { name: "Profile", href: USER_LINKS.PROFILE },
-      { name: "Portfolio", href: USER_LINKS.PORTFOLIO },
-      { name: "Topics", href: USER_LINKS.TOPICS },
-      { name: "Doubts", href: USER_LINKS.DOUBTS },      
+      { name: "Dashboard", href: USER_LINKS.DASHBOARD, icon: HomeIcon },
+      { name: "Profile", href: USER_LINKS.PROFILE, icon: UserCircleIcon },
+      { name: "Portfolio", href: USER_LINKS.PORTFOLIO, icon: BriefcaseIcon },
+      { name: "Topics", href: USER_LINKS.TOPICS, icon: BookOpenIcon },
+      { name: "Doubts", href: USER_LINKS.DOUBTS, icon: QuestionMarkCircleIcon },
     ],
-  },  
+  },
   {
     title: "Coding & Learning",
     items: [
-      { name: "Daily Challenge", href: CODING_LEARNING.DAILY_CHALLENGE },
-      { name: "Contests & Hackathons", href: CODING_LEARNING.CONTESTS_HACKATHONS },      
-      { name: "Projects & Assignments", href: CODING_LEARNING.PROJECTS_ASSIGNMENTS },
+      {
+        name: "Daily Challenge",
+        href: CODING_LEARNING.DAILY_CHALLENGE,
+        icon: FireIcon,
+      },
+      {
+        name: "Contests & Hackathons",
+        href: CODING_LEARNING.CONTESTS_HACKATHONS,
+        icon: TrophyIcon,
+      },
+      {
+        name: "Projects & Assignments",
+        href: CODING_LEARNING.PROJECTS_ASSIGNMENTS,
+        icon: ClipboardDocumentCheckIcon,
+      },
     ],
   },
   {
     title: "Settings",
     items: [
-      { name: "Account Settings", href: "/settings" },
-      { name: "Notifications", href: "/notifications" },
-      { name: "Logout", href: "/logout" },
+      { name: "Account Settings", href: "/settings", icon: Cog6ToothIcon },
+      { name: "Notifications", href: "/notifications", icon: BellAlertIcon },
+      { name: "Logout", href: "/logout", icon: ArrowRightStartOnRectangleIcon },
     ],
   },
 ];
@@ -54,7 +80,9 @@ export default function Sidebar({ open, onClose }) {
           ✕
         </button>
         <div className="flex items-center gap-2 text-xl font-semibold">
-          <span className="grid h-8 w-8 place-items-center rounded-xl bg-gray-900 text-white">C</span>
+          <span className="grid h-8 w-8 place-items-center rounded-xl bg-gray-900 text-white">
+            C
+          </span>
           <Link href={WEB_PAGES.WEB_HOME}>Console</Link>
         </div>
       </div>
@@ -63,12 +91,15 @@ export default function Sidebar({ open, onClose }) {
       <nav className="flex-1 overflow-y-auto px-4 pb-6 space-y-6">
         {MENU_SECTIONS.map((section) => (
           <div key={section.title}>
-            <div className="px-2 text-xs font-medium uppercase tracking-wider text-gray-500">
-              {section.title}
-            </div>
+            {section.title && (
+              <div className="px-2 text-xs font-medium uppercase tracking-wider text-gray-500">
+                {section.title}
+              </div>
+            )}
             <ul className="mt-2 space-y-1">
               {section.items.map((item) => {
                 const isActive = pathname === item.href;
+                const Icon = item.icon;
                 return (
                   <li key={item.name}>
                     <Link
@@ -81,13 +112,12 @@ export default function Sidebar({ open, onClose }) {
                             : "text-gray-600 hover:bg-gray-100"
                         }`}
                     >
-                      {/* Dot with animation */}
-                      <span
-                        className={`inline-block h-2 w-2 rounded-full transition-all duration-300
-                          ${isActive ? "bg-white scale-125" : "bg-gray-300 scale-100"}
-                        `}
+                      <Icon
+                        className={`h-5 w-5 flex-shrink-0 ${
+                          isActive ? "text-white" : "text-gray-500"
+                        }`}
                       />
-                      {item.name}
+                      <span className="truncate">{item.name}</span>
                     </Link>
                   </li>
                 );
