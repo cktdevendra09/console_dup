@@ -23,13 +23,7 @@ export const DASHBOARD_LINKS = {
   CHALLENGE_ADDNEW : DASHBOARD_PREFIX+CHALLENGE_MENU+"/add",   
   DOUBTS_ADDUPDATE : DASHBOARD_PREFIX+DOUBTS_MENU+"/create", 
   DOUBTS_DETAILS : DASHBOARD_PREFIX+DOUBTS_MENU+"/slug", 
-
 };
-
-
-
-
-
 
 export const AUTH= {
   LOGIN: "/auth/login",
@@ -43,8 +37,8 @@ export const CODING_LEARNING = {
   PROJECTS_ASSIGNMENTS: "/dashboard/projects-assignments",
 };
 
-// export const OTHER_LINKS = {
-//   HOME: "/",
-//   ABOUT: "/about",
-//   CONTACT: "/contact",
-// };
+export const SETTINGS = {
+  NOTIFICATION: DASHBOARD_PREFIX+"/notification",
+  ABOUT: "/about",
+  CONTACT: "/contact",
+};

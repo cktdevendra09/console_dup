@@ -56,9 +56,18 @@ const MENU_SECTIONS = [
   {
     title: "Settings",
     items: [
-      { name: "Account Settings", href: "/settings", icon: Cog6ToothIcon },
-      { name: "Notifications", href: "/notifications", icon: BellAlertIcon },
-      { name: "Logout", href: "/logout", icon: ArrowRightStartOnRectangleIcon },
+      { name: "Account Settings", 
+        href: "/settings", 
+        icon: Cog6ToothIcon 
+      },
+      { name: "Notifications", 
+        href: "/notifications", 
+        icon: BellAlertIcon 
+      },
+      { name: "Logout", 
+        href: "/logout", 
+        icon: ArrowRightStartOnRectangleIcon 
+      },
     ],
   },
 ];
