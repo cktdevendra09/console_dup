@@ -39,6 +39,7 @@ export const CODING_LEARNING = {
 
 export const SETTINGS = {
   NOTIFICATION: DASHBOARD_PREFIX+"/notification",
+  ACCOUNT_SETTINGS: DASHBOARD_PREFIX+"/account-settings ",
   ABOUT: "/about",
   CONTACT: "/contact",
 };

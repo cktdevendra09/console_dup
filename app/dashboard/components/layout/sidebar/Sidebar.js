@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import React from "react";
 
-import { CODING_LEARNING, USER_LINKS } from "@/app/dashboard/config/routes";
+import { CODING_LEARNING, DASHBOARD_LINKS, SETTINGS, USER_LINKS } from "@/app/dashboard/config/routes";
 import { WEB_PAGES } from "@/app/(web)/config/routes";
 
 import {
@@ -57,11 +57,11 @@ const MENU_SECTIONS = [
     title: "Settings",
     items: [
       { name: "Account Settings", 
-        href: "/settings", 
+        href: SETTINGS.ACCOUNT_SETTINGS, 
         icon: Cog6ToothIcon 
       },
       { name: "Notifications", 
-        href: "/notifications", 
+        href: SETTINGS.NOTIFICATION, 
         icon: BellAlertIcon 
       },
       { name: "Logout", 
