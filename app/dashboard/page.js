@@ -14,6 +14,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { CARD_CLASS } from "./components/Comman/DESIGN";
 
 const chartData = [
   { day: "01", thisMonth: 7, lastMonth: 6 },
@@ -27,7 +28,7 @@ const chartData = [
 
 export default function DashboardPage() {
   return (
-    <div className="min-h-screen bg-[#f5f5f7] flex gap-6 p-6">
+    <div className="min-h-screen flex gap-6 p-6">
 
       {/* MAIN CONTENT */}
       <div className="flex-1">
@@ -90,7 +91,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Current Tasks */}
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <div className={CARD_CLASS.CARD}>
           <h3 className="text-lg font-semibold mb-4">Current Tasks</h3>
 
           <ul className="space-y-4">

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { UserGroupIcon, PlusCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { CARD_CLASS } from "../Comman/DESIGN";
 
 export default function SocialMediaComp() {
   const [socials, setSocials] = useState([
@@ -26,7 +27,7 @@ export default function SocialMediaComp() {
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-sm">
+    <div className={CARD_CLASS.CARD}>
       {/* Title with Add Icon */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">

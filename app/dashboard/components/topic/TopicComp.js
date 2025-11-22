@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { DASHBOARD_LINKS } from "../../config/routes";
 
 export default function TopicComp() {
   return (
@@ -20,7 +22,9 @@ export default function TopicComp() {
         {/* Content Section */}
         <div className="px-4 py-2 mt-2">
           <h3 className="font-bold  text-gray-800 tracking-normal">
-            My Amazing Journey to the Mountains.
+            <Link href={DASHBOARD_LINKS.TOPICS_DETAILS} >
+              My Amazing Journey to the Mountains.
+            </Link>
           </h3>
 
           <p className="text-sm text-gray-700 px-2 mr-1">

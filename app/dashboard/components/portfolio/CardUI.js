@@ -1,11 +1,12 @@
 "use client";
 
 import React from "react";
+import { CARD_CLASS } from "../Comman/DESIGN";
 
 const CardUI = () => {
   return (
     <div className="">
-      <div className="!z-5 relative flex flex-col rounded-[20px] max-w-[300px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 w-full p-4 3xl:p-[18px]">
+      <div className={CARD_CLASS.CARD}>
         <div className="h-full w-full">
           {/* Image */}
           <div className="relative w-full">

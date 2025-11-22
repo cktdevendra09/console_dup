@@ -3,6 +3,7 @@ const DASHBOARD_PREFIX = "/dashboard" ;
 const PROFILE_MENU = "/profile";
 const CHALLENGE_MENU = "/challenge";
 const DOUBTS_MENU = "/doubts";
+const TOPICS_MENU = "/topics";
 
 export const USER_LINKS = {
   DASHBOARD: DASHBOARD_PREFIX,  
@@ -23,6 +24,7 @@ export const DASHBOARD_LINKS = {
   CHALLENGE_ADDNEW : DASHBOARD_PREFIX+CHALLENGE_MENU+"/add",   
   DOUBTS_ADDUPDATE : DASHBOARD_PREFIX+DOUBTS_MENU+"/create", 
   DOUBTS_DETAILS : DASHBOARD_PREFIX+DOUBTS_MENU+"/slug", 
+  TOPICS_DETAILS : DASHBOARD_PREFIX+TOPICS_MENU+"/slig"
 };
 
 export const AUTH= {

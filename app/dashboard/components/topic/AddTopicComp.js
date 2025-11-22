@@ -14,7 +14,7 @@ const AddTopicComp = () => {
 
   return (
     <div className="">
-      <div className="bg-white rounded-lg overflow-hidden border border-gray-200">
+      <div className="bg-white rounded-lg overflow-hidden shadow">
         {/* Editor */}
         <div className="p-6">
           <input

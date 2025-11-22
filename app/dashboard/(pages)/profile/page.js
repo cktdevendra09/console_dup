@@ -7,6 +7,7 @@ import { EDIT_BUTTON } from "../../components/Comman/EDIT_BUTTON";
 import SkillsComp from "../../components/profileComp/SkillsComp";
 import LanguagesComp from "../../components/profileComp/LanguagesComp";
 import SocialMediaComp from "../../components/profileComp/SocialMediaComp";
+import { CARD_CLASS } from "../../components/Comman/DESIGN";
 
 const page = () => {
   const [profile, setProfile] = useState({
@@ -43,7 +44,7 @@ const page = () => {
       <div className="container mx-auto md:flex md:space-x-4">
         {/* Left Sidebar */}
         <div className="w-full md:w-3/12 space-y-4">
-          <div className="bg-white p- rounded shadow p-5">
+          <div className={CARD_CLASS.CARD}>
             <div className="relative">
               <img
                 src="https://images.unsplash.com/photo-1759675795062-a657fcb278b1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1601"
@@ -66,7 +67,7 @@ const page = () => {
         {/* Right Content */}
         <div className="w-full md:w-9/12 space-y-4">
           {/* About Section */}
-          <div className="bg-white p-3 shadow-sm rounded-sm">
+          <div className={CARD_CLASS.CARD}>
             <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-2">
               <svg
                 className="h-5 text-green-500"
@@ -115,7 +116,7 @@ const page = () => {
           </div>
 
           {/* Experience & Education */}
-          <div className="bg-white p-3 shadow-sm rounded-sm">
+          <div className={CARD_CLASS.CARD}>
             <div className="grid md:grid-cols-2 gap-4">
               {/* Experience */}
               <div>

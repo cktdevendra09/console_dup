@@ -6,7 +6,7 @@ import AddTopicComp from "../../components/topic/AddTopicComp";
 
 const Page = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-6">
+    <div className="min-h-screen  py-6">
       <div className="container mx-auto px-4">
         <h1 className="text-2xl font-bold text-gray-800 mb-6">Topics</h1>
 

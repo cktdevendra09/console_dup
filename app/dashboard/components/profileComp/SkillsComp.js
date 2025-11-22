@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { WrenchScrewdriverIcon, TrashIcon, PlusIcon } from "@heroicons/react/24/outline";
+import { CARD_CLASS } from "../Comman/DESIGN";
 
 export default function SkillsComp() {
   const [skills, setSkills] = useState(["Java", "Spring Boot", "React.js"]);
@@ -20,7 +21,7 @@ export default function SkillsComp() {
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-sm">
+    <div className={CARD_CLASS.CARD}>
       {/* Header */}
       <div className="flex justify-between items-center mb-3">
         <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
