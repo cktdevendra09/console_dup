@@ -1,24 +1,49 @@
 "use client";
+
 import React from "react";
-import TopicCardUi from "@/app/(web)/components/card/TopicCardUi";
-import TopicComp from "../../components/topic/TopicComp";
+
 import AddTopicComp from "../../components/topic/AddTopicComp";
+import TopicComp from "../../components/topic/TopicComp";
 
 const Page = () => {
   return (
-    <div className="min-h-screen  py-6">
-      <div className="container mx-auto px-4">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6">Topics</h1>
+    <div className="">
+      <div className="">
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* First card — Add Topic */}
-          <div className="order-first">
-            <AddTopicComp />
+        {/* HEADING LEFT + BREADCRUMB RIGHT */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+
+          {/* LEFT SIDE: Page Heading */}
+          <div>
+            <h1 className="text-3xl font-semibold text-gray-900">Topics</h1>
+            <p className="text-gray-500 text-sm mt-1">
+              Manage and organize your topics.
+            </p>
           </div>
-          {/* Other topic cards */}
-          <TopicComp />
-          <TopicComp />
+
+          {/* RIGHT SIDE: Breadcrumb */}
+          <div className="mt-4 md:mt-0">
+            {/* <BreadcrumbUI items={["Topics"]} /> */}
+          
+          </div>
+        </div>
+
+        {/* MAIN CONTENT AREA */}
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+
+          <h2 className="text-lg font-semibold text-gray-800 mb-6">
+            All Topics
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <AddTopicComp />
+
+            <TopicComp />
+            <TopicComp />
+            <TopicComp />
+
+          </div>
         </div>
       </div>
     </div>
