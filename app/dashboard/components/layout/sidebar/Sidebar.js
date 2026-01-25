@@ -29,7 +29,7 @@ const MENU_SECTIONS = [
       { name: "Dashboard", href: USER_LINKS.DASHBOARD, icon: HomeIcon },
       { name: "Profile", href: USER_LINKS.PROFILE, icon: UserCircleIcon },
       { name: "Portfolio", href: USER_LINKS.PORTFOLIO, icon: BriefcaseIcon },
-      { name: "Topics", href: USER_LINKS.TOPICS, icon: BookOpenIcon },
+      { name: "Articale", href: USER_LINKS.TOPICS, icon: BookOpenIcon },
       { name: "Doubts", href: USER_LINKS.DOUBTS, icon: QuestionMarkCircleIcon },
     ],
   },
