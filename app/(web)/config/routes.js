@@ -3,8 +3,8 @@ export const WEB_PAGES = {
   WEB_HOME : "/",
   PORTFOLIO:"/portfolio",
   TOPICS: "/article",
-  DOUBTS: "/doubts",
-  CONTESTS: "/code-contest",
+  DOUBTS: "/play/dd",
+  CONTESTS: "/contest",
 };
 
 
