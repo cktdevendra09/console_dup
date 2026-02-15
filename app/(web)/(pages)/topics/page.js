@@ -1,99 +1,96 @@
-"use client";
-
-import React from "react";
-
-const Topics = () => {
+export default function ArticlesPage() {
   return (
-    <div className="p-relative h-screen" style={{ backgroundColor: "#15202b" }}>
-      <div className="flex justify-center">
-        <header className="text-white h-auto py-4">
-          {/* Navbar (left side) */}
-          <div style={{ width: 275 }}>
-            <div className="overflow-y-auto fixed h-screen pr-3" style={{ width: 275 }}>
-              {/* Logo */}
-              <svg viewBox="0 0 24 24" className="h-8 w-8 text-white ml-3" fill="currentColor">
-                <g>
-                  <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path>
-                </g>
-              </svg>
+    <div className="min-h-screen bg-[#f5f6f4]">
+      {/* Navbar */}
+      <header className="bg-white border-b">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <h1 className="text-xl font-semibold">Acelia</h1>
+          <nav className="hidden md:flex gap-6 text-sm text-gray-600">
+            <a className="hover:text-black" href="#">Home</a>
+            <a className="hover:text-black" href="#">Services</a>
+            <a className="hover:text-black" href="#">About</a>
+            <a className="hover:text-black" href="#">More</a>
+          </nav>
+          <button className="bg-black text-white px-6 py-2 rounded-full text-sm">
+            Get Started
+          </button>
+        </div>
+      </header>
 
-              {/* Nav */}
-              <nav className="mt-5 px-2">
-                {/* Example Nav Item */}
-                <a href="#" className="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full hover:bg-gray-800 hover:text-blue-300">
-                  <svg className="mr-4 h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"></path>
-                  </svg>
-                  Home
-                </a>
-                {/* Add other nav items similarly */}
-              </nav>
+      {/* Page Title */}
+      <section className="max-w-7xl mx-auto px-6 py-12">
+        <h2 className="text-4xl font-semibold mb-6">Blog & articles</h2>
 
-              {/* User Menu */}
-              <div className="absolute" style={{ bottom: "2rem" }}>
-                <div className="flex-shrink-0 flex hover:bg-gray-800 rounded-full px-4 py-3 mt-12 mr-2">
-                  <a href="#" className="flex-shrink-0 group block">
-                    <div className="flex items-center">
-                      <div>
-                        <img className="inline-block h-10 w-10 rounded-full" src="https://pbs.twimg.com/profile_images/1254779846615420930/7I4kP65u_400x400.jpg" alt="Profile" />
-                      </div>
-                      <div className="ml-3">
-                        <p className="text-base leading-6 font-medium text-white">ℜ??????ℜ??????.dev</p>
-                        <p className="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                          @Ricardo_oRibeir
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
+        {/* Filters */}
+        <div className="flex gap-3 flex-wrap mb-10">
+          {["All", "Marketing Tips", "Business Strategies", "Industry Insights", "Client Success"].map((tag) => (
+            <button
+              key={tag}
+              className="px-4 py-2 rounded-full border text-sm bg-white hover:bg-black hover:text-white transition"
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+
+        {/* Featured Section */}
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          <div className="lg:col-span-2">
+            <img
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+              className="rounded-3xl w-full h-[420px] object-cover"
+              alt="featured"
+            />
+          </div>
+          <div className="bg-white rounded-3xl p-6 flex flex-col justify-between">
+            <div>
+              <span className="text-xs text-gray-500">News</span>
+              <h3 className="text-2xl font-semibold mt-2 mb-4">
+                Maximizing Efficiency in Operations
+              </h3>
+              <p className="text-gray-600 text-sm">
+                We offer a comprehensive range of services designed to meet the
+                unique needs of your business.
+              </p>
+            </div>
+            <button className="mt-6 bg-black text-white px-5 py-2 rounded-full w-fit text-sm">
+              Read more
+            </button>
+          </div>
+        </div>
+
+        {/* Articles Grid */}
+        <h3 className="text-3xl font-semibold mb-8">Latest insights and trends</h3>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[1, 2, 3, 4, 5, 6].map((i) => (
+            <div key={i} className="bg-white rounded-3xl overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+                className="h-56 w-full object-cover"
+                alt="article"
+              />
+              <div className="p-5">
+                <span className="text-xs text-gray-500">News</span>
+                <h4 className="text-lg font-semibold mt-2 mb-2">
+                  Maximizing Efficiency in Operations
+                </h4>
+                <p className="text-sm text-gray-600">
+                  Discover strategies to streamline your business processes and
+                  enhance productivity.
+                </p>
               </div>
             </div>
-          </div>
-        </header>
+          ))}
+        </div>
+      </section>
 
-        <main role="main" className="flex" style={{ width: 990 }}>
-          <section className="w-3/5 border border-y-0 border-gray-800" style={{ maxWidth: 600 }}>
-            {/* Example Tweet / Content */}
-            <ul className="list-none">
-              <li>
-                <article className="hover:bg-gray-800 transition duration-350 ease-in-out">
-                  <div className="flex flex-shrink-0 p-4 pb-0">
-                    <a href="#" className="flex-shrink-0 group block">
-                      <div className="flex items-center">
-                        <div>
-                          <img className="inline-block h-10 w-10 rounded-full" src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png" alt="User" />
-                        </div>
-                        <div className="ml-3">
-                          <p className="text-base leading-6 font-medium text-white">
-                            Sonali Hirave
-                            <span className="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                              @ShonaDesign  . 16 April
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="pl-16">
-                    <p className="text-base width-auto font-medium text-white flex-shrink">
-                      Day 07 of the challenge <a href="#" className="text-blue-400">#100DaysOfCode</a> I was wondering what I can do with <a href="#" className="text-blue-400">#tailwindcss</a>
-                    </p>
-                    <div className="md:flex-shrink pr-6 pt-3">
-                      <img
-                        className="rounded-lg w-full h-64 object-cover"
-                        src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=448&q=80"
-                        alt="Tweet Image"
-                      />
-                    </div>
-                  </div>
-                </article>
-              </li>
-            </ul>
-          </section>
-        </main>
-      </div>
+      {/* Footer */}
+      <footer className="border-t mt-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-6 text-sm text-gray-500 text-center">
+          © 2026 Acelia. All rights reserved.
+        </div>
+      </footer>
     </div>
   );
-};
-
-export default Topics;
+}
