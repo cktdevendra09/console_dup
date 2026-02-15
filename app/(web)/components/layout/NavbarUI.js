@@ -2,86 +2,71 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { APP_CONFIG } from "../../utils/Constants";
 import { AUTH, WEB_PAGES } from "../../config/routes";
 
 export default function NavbarUI() {
   const [open, setOpen] = useState(false);
-  const [moreOpen, setMoreOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <div className="relative">
 
       {/* ================= NAVBAR ================= */}
       <nav className="lg:fixed lg:top-0 lg:left-0 lg:w-full z-50 bg-white border-b border-black/10">
-  <div className="max-w-[1600px] mx-auto px-8 h-20 flex items-center justify-between relative">
+        <div className="max-w-[1600px] mx-auto px-8 h-20 flex items-center justify-between relative">
 
-    {/* LEFT - LOGO */}
-    <Link
-      href="/"
-      className="text-2xl font-bold tracking-tighter uppercase"
-    >
-      {APP_CONFIG.PROJECT_NAME}.
-    </Link>
+          {/* LEFT - LOGO */}
+          <Link
+            href="/"
+            className="text-2xl font-bold tracking-tighter uppercase"
+          >
+            {APP_CONFIG.PROJECT_NAME}.
+          </Link>
 
-    {/* CENTER - MENU */}
-    <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 space-x-10 text-[11px] uppercase tracking-[0.2em] font-medium text-black/50">
+          {/* CENTER - MENU */}
+          <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 space-x-10 text-[11px] uppercase tracking-[0.2em] font-medium">
 
-      <Link href="/" className="hover:text-black transition-colors">
-        Home
-      </Link>
+            <NavLink href="/" label="Home" pathname={pathname} />
+            <NavLink href={WEB_PAGES.PORTFOLIO} label="Portfolio" pathname={pathname} />
+            <NavLink href={WEB_PAGES.TOPICS} label="Articles" pathname={pathname} />
+            <NavLink href={WEB_PAGES.CONTESTS} label="Contests" pathname={pathname} />
+            <NavLink href={WEB_PAGES.DOUBTS} label="Playground" pathname={pathname} />
+            <NavLink href={WEB_PAGES.WALLET} label="Wallet" pathname={pathname} />
 
-      <Link
-        href={WEB_PAGES.PORTFOLIO}
-        className="hover:text-black transition-colors"
-      >
-        Portfolio
-      </Link>
+          </div>
 
-      <Link
-        href={WEB_PAGES.TOPICS}
-        className="hover:text-black transition-colors"
-      >
-        Articles
-      </Link>
+          {/* RIGHT - SIGN IN + MOBILE */}
+          <div className="flex items-center space-x-6">
 
-      <Link
-        href={WEB_PAGES.CONTESTS}
-        className="hover:text-black transition-colors"
-      >
-        Contests
-      </Link>
+            <Link
+              href={AUTH.LOGIN}
+              className={`hidden lg:inline-block border px-6 py-2 text-[11px] uppercase tracking-[0.2em] transition-all ${
+                pathname === AUTH.LOGIN
+                  ? "bg-black text-white border-black"
+                  : "border-black hover:bg-black hover:text-white"
+              }`}
+            >
+              Sign In
+            </Link>
 
-      <Link
-        href={WEB_PAGES.DOUBTS}
-        className="hover:text-black transition-colors"
-      >
-        Playground
-      </Link>
-    </div>
+            <button
+              className="lg:hidden text-black"
+              onClick={() => setOpen(true)}
+            >
+              <svg viewBox="0 0 20 20" className="w-6 h-6">
+                <path
+                  d="M3 5h14M3 10h14M3 15h14"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+              </svg>
+            </button>
 
-    {/* RIGHT - SIGN IN + MOBILE */}
-    <div className="flex items-center space-x-6">
-      <Link
-        href={AUTH.LOGIN}
-        className="hidden lg:inline-block border border-black px-6 py-2 text-[11px] uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all"
-      >
-        Sign In
-      </Link>
-
-      <button
-        className="lg:hidden text-black"
-        onClick={() => setOpen(true)}
-      >
-        <svg viewBox="0 0 20 20" className="w-6 h-6">
-          <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="2" />
-        </svg>
-      </button>
-    </div>
-  </div>
-</nav>
-
-
+          </div>
+        </div>
+      </nav>
 
       {/* ================= MOBILE DRAWER ================= */}
       <div
@@ -90,7 +75,7 @@ export default function NavbarUI() {
         }`}
       >
         <div className="flex justify-between items-center p-6 border-b">
-          <span className="text-lg font-semibold">Menu</span>
+          <span className="text-lg font-semibold">Console</span>
           <button onClick={() => setOpen(false)} className="text-2xl">
             ×
           </button>
@@ -98,29 +83,14 @@ export default function NavbarUI() {
 
         <nav className="flex flex-col p-6 space-y-6 text-sm uppercase tracking-widest">
 
-          <Link href="/" onClick={() => setOpen(false)}>
-            Home
-          </Link>
+          <MobileLink href="/" label="Home" pathname={pathname} setOpen={setOpen} />
+          <MobileLink href={WEB_PAGES.PORTFOLIO} label="Portfolio" pathname={pathname} setOpen={setOpen} />
+          <MobileLink href={WEB_PAGES.TOPICS} label="Articles" pathname={pathname} setOpen={setOpen} />
+          <MobileLink href={WEB_PAGES.CONTESTS} label="Contests" pathname={pathname} setOpen={setOpen} />
+          <MobileLink href={WEB_PAGES.DOUBTS} label="Playground" pathname={pathname} setOpen={setOpen} />
+          <MobileLink href={WEB_PAGES.WALLET} label="Wallet" pathname={pathname} setOpen={setOpen} />
+          <MobileLink href={AUTH.LOGIN} label="Sign In" pathname={pathname} setOpen={setOpen} />
 
-          <Link href={WEB_PAGES.PORTFOLIO} onClick={() => setOpen(false)}>
-            Portfolio
-          </Link>
-
-          <Link href={WEB_PAGES.TOPICS} onClick={() => setOpen(false)}>
-            Articles
-          </Link>
-
-          <Link href={WEB_PAGES.CONTESTS} onClick={() => setOpen(false)}>
-            Contests
-          </Link>
-
-          <Link href={WEB_PAGES.DOUBTS} onClick={() => setOpen(false)}>
-            Playground
-          </Link>
-
-          <Link href={AUTH.LOGIN} onClick={() => setOpen(false)}>
-            Sign In
-          </Link>
         </nav>
       </div>
 
@@ -135,12 +105,39 @@ export default function NavbarUI() {
   );
 }
 
-/* ================= DROPDOWN ITEM ================= */
+/* ================= DESKTOP NAV LINK ================= */
 
-function DropdownItem({ title }) {
+function NavLink({ href, label, pathname }) {
+  const isActive = pathname === href;
+
   return (
-    <button className="block w-full text-left px-4 py-2 text-sm hover:bg-black/5">
-      {title}
-    </button>
+    <Link
+      href={href}
+      className={`transition-colors ${
+        isActive ? "text-black" : "text-black/50 hover:text-black"
+      }`}
+    >
+      {label}
+    </Link>
+  );
+}
+
+/* ================= MOBILE NAV LINK ================= */
+
+function MobileLink({ href, label, pathname, setOpen }) {
+  const isActive = pathname === href;
+
+  return (
+    <Link
+      href={href}
+      onClick={() => setOpen(false)}
+      className={`transition-colors ${
+        isActive
+          ? "text-black font-semibold"
+          : "text-black/60 hover:text-black"
+      }`}
+    >
+      {label}
+    </Link>
   );
 }

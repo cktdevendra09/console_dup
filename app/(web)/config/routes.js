@@ -5,6 +5,7 @@ export const WEB_PAGES = {
   TOPICS: "/article",
   DOUBTS: "/play/dd",
   CONTESTS: "/contest",
+  WALLET: "/wallet",
 };
 
 
