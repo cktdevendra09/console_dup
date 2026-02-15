@@ -3,7 +3,7 @@ export default function HireTalentPage() {
     <div className="bg-white text-black antialiased font-display min-h-screen">
 
       {/* ================= NAVBAR ================= */}
-      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/5">
+      {/* <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/5">
         <div className="max-w-[1600px] mx-auto px-8 h-20 flex items-center justify-between">
           <div className="flex items-center space-x-12">
             <a className="text-2xl font-bold tracking-tighter uppercase">Archive.</a>
@@ -24,7 +24,7 @@ export default function HireTalentPage() {
             </button>
           </div>
         </div>
-      </nav>
+      </nav> */}
 
       {/* ================= MAIN ================= */}
       <main className="max-w-[1600px] mx-auto px-8 pt-16">

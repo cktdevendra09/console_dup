@@ -2,26 +2,7 @@ export default function Home() {
   return (
     <div className="font-serif antialiased bg-white text-black">
 
-      {/* ================= NAVBAR ================= */}
-      <nav className="sticky top-0 z-50 bg-white border-b border-black/10">
-        <div className="max-w-[1600px] mx-auto px-8 h-20 flex items-center justify-between">
-          <div className="flex items-center space-x-12">
-            <a className="text-2xl font-bold tracking-tighter uppercase" href="#">
-              Archive.
-            </a>
-
-            <div className="hidden lg:flex space-x-8 text-[10px] uppercase tracking-[0.2em] font-medium text-black/50">
-              <a className="hover:text-black transition-colors" href="#">Portfolios</a>
-              <a className="hover:text-black transition-colors" href="#">Manifesto</a>
-              <a className="hover:text-black transition-colors" href="#">Contact</a>
-            </div>
-          </div>
-
-          <button className="border border-black px-6 py-2 text-[10px] uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all">
-            Subscribe
-          </button>
-        </div>
-      </nav>
+      
 
       {/* ================= MAIN ================= */}
       <main className="max-w-[1600px] mx-auto px-8 py-12">
