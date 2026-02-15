@@ -6,25 +6,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0B1423] to-[#0E1A2D] text-white">
 
-      {/* ================= NAVBAR ================= */}
-      <nav className="flex justify-between items-center px-8 py-5 border-b border-white/10">
-        <h1 className="text-lg font-bold text-blue-500">COMMUNITY-HUB</h1>
-
-        <div className="hidden md:flex gap-8 text-sm text-gray-300">
-          <Link href="#">Articles</Link>
-          <Link href="#">Portfolio</Link>
-          <Link href="#">Contests</Link>
-          <Link href="#">Leaderboard</Link>
-        </div>
-
-        <div className="flex gap-3 text-sm">
-          <button className="text-gray-300 hover:text-white">Login</button>
-          <button className="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700">
-            Sign Up
-          </button>
-        </div>
-      </nav>
-
       {/* ================= HERO ================= */}
       <section className="text-center py-24 px-6">
         <p className="text-blue-400 text-xs mb-4 tracking-widest">
