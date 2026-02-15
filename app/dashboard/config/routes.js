@@ -10,7 +10,7 @@ export const USER_LINKS = {
   PROFILE: DASHBOARD_PREFIX + PROFILE_MENU,  
   PORTFOLIO: DASHBOARD_PREFIX+ "/portfolio",  
   BLOGS: DASHBOARD_PREFIX + "/blogs",  
-  TOPICS: DASHBOARD_PREFIX + "/topics",  
+  TOPICS: DASHBOARD_PREFIX + "/article",  
   DOUBTS: DASHBOARD_PREFIX + "/doubts",  
 
 };
@@ -35,7 +35,7 @@ export const AUTH= {
 
 export const CODING_LEARNING = {
   DAILY_CHALLENGE: "/dashboard/challenge",
-  CONTESTS_HACKATHONS: "/dashboard/contests",
+  CONTESTS_HACKATHONS: "/dashboard/contest",
   PROJECTS_ASSIGNMENTS: "/dashboard/projects-assignments",
 };
 
