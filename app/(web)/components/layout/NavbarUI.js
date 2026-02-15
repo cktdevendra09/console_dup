@@ -33,8 +33,6 @@ export default function NavbarUI() {
             <NavLink href={WEB_PAGES.TOPICS} label="Articles" pathname={pathname} />
             <NavLink href={WEB_PAGES.CONTESTS} label="Contests" pathname={pathname} />
             <NavLink href={WEB_PAGES.DOUBTS} label="Playground" pathname={pathname} />
-            <NavLink href={WEB_PAGES.WALLET} label="Wallet" pathname={pathname} />
-
           </div>
 
           {/* RIGHT - SIGN IN + MOBILE */}

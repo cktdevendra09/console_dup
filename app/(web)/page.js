@@ -1,36 +1,40 @@
 "use client";
 
 import Link from "next/link";
+import HeroSection from "./components/hero/HeroSectionUI";
 
 export default function Home() {
+  const articles = [
+    {
+      image:
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuAcEMNEQKRiTem7Sz9q6E293sEx4eYyCjkldXstetsG2pnHqtxZ0jMrRdAsRzrfNCC081Li4eFCzh9nbf6NEeBRIr3Ce9Bk0E6ANqMsIrmaw6Zf45z3eHMZfU2N1UqLvNANW8JaIShCxvEBQCUZTRY0Y45BbEQtuhKWoTOnllV9aBYdcDUIHdLSkgOjRS7WP3O4lWnaswKyi3cb7HcyAQhS3yvJ_Kb0odsp3MzSal0JwbrLZM1KHvhcER2tMtwKY6wRLTFhN2WX504",
+      alt: "Workplace technology",
+      category: "Technology",
+      date: "Oct 24, 2023",
+      readTime: "8 min read",
+      title: "The Future of Generative Systems in Modern UI Frameworks",
+      description:
+        "Exploring how AI is reshaping the way designers approach component libraries, styling systems, and user experience paradigms in the next generation of web development.",
+      href: "#",
+    },
+    {
+      image:
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuB90wQcTWMJHGMciKlZ9bzuCoX3Mkbj0hd34_dlfB5kBEGZVnhrC2GZG0WdEOfHtPaE4FxZxBCpr4cu2yWiYDjoO6ZD3A_6P_fv2bBU9FQYbPObIfgh4AUSADO2uqgcWQ3izNsOtQnIX01VAS5HQ2J9Q41_k1ucoWGKaR6ZQSCI8BlyROKpQraFHsa266b33N2LWNle5yMYHgDYpHt9mZ1_B2ldV1s94TQ3TKvG2dBqahoIUxl1pBOy3XbCyXBPs-ijSaMu2FYikew",
+      alt: "Vintage computer hardware",
+      category: "Design",
+      date: "Oct 18, 2023",
+      readTime: "12 min read",
+      title: "Minimalism vs. Brutalism: The Great Design Conflict of 2024",
+      description:
+        "A new wave of brutalist aesthetics challenges the clean, minimalist status quo that has dominated for a decade.",
+      href: "#",
+    },
+  ];
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0B1423] to-[#0E1A2D] text-white">
+    <div className="min-h-screen  text-dark">
 
       {/* ================= HERO ================= */}
-      <section className="text-center py-24 px-6">
-        <p className="text-blue-400 text-xs mb-4 tracking-widest">
-          WELCOME TO THE CREATIVE HUB
-        </p>
-
-        <h2 className="text-4xl md:text-6xl font-bold leading-tight">
-          Writing, Competing, <br />
-          <span className="text-blue-500">And Winning</span>
-        </h2>
-
-        <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-          The ultimate platform for writers and gamers to showcase their craft,
-          climb the ranks, and earn rewards.
-        </p>
-
-        <div className="mt-8 flex justify-center gap-4">
-          <button className="bg-blue-600 px-6 py-3 rounded-xl hover:bg-blue-700">
-            Get Started Free
-          </button>
-          <button className="border border-white/20 px-6 py-3 rounded-xl hover:bg-white/10">
-            View Active Contests
-          </button>
-        </div>
-      </section>
+      <HeroSection/>
 
       {/* ================= FEATURED ARTICLES ================= */}
       <section className="px-8 py-16 max-w-7xl mx-auto">
@@ -43,7 +47,7 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {[1, 2, 3].map((item) => (
-            <div key={item} className="bg-[#111C2E] rounded-2xl overflow-hidden">
+            <div key={item} className="bg-white rounded-2xl overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
                 alt="Article"
@@ -78,7 +82,7 @@ export default function Home() {
           <h3 className="text-xl font-semibold mb-6">Active Contests</h3>
 
           <div className="space-y-4">
-            <div className="bg-[#111C2E] p-6 rounded-2xl flex justify-between items-center">
+            <div className="bg-white p-6 rounded-2xl flex justify-between items-center">
               <div>
                 <h4 className="font-semibold">Monthly Flash Fiction</h4>
                 <p className="text-gray-400 text-sm">
@@ -90,7 +94,7 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="bg-[#111C2E] p-6 rounded-2xl flex justify-between items-center">
+            <div className="bg-white p-6 rounded-2xl flex justify-between items-center">
               <div>
                 <h4 className="font-semibold">Indie Speedrun Saturday</h4>
                 <p className="text-gray-400 text-sm">
@@ -102,7 +106,7 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="bg-[#111C2E] p-6 rounded-2xl flex justify-between items-center">
+            <div className="bg-white p-6 rounded-2xl flex justify-between items-center">
               <div>
                 <h4 className="font-semibold">Character Design Sprint</h4>
                 <p className="text-gray-400 text-sm">
@@ -120,7 +124,7 @@ export default function Home() {
         <div>
           <h3 className="text-xl font-semibold mb-6">Daily Top 5</h3>
 
-          <div className="bg-[#111C2E] rounded-2xl p-6 space-y-4">
+          <div className="bg-white rounded-2xl p-6 space-y-4">
             {["DevMaster", "PixelPro", "LearningSphere", "Voyager99", "NovaTech"].map(
               (user, i) => (
                 <div key={i} className="flex justify-between items-center">
@@ -154,7 +158,7 @@ export default function Home() {
           {[1, 2, 3, 4, 5].map((item) => (
             <div
               key={item}
-              className="bg-[#111C2E] p-6 rounded-2xl min-w-[180px] text-center"
+              className="bg-white p-6 rounded-2xl min-w-[180px] text-center"
             >
               <img
                 src={`https://i.pravatar.cc/100?img=${item}`}

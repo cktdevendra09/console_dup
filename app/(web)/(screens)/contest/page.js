@@ -3,7 +3,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#f5f5f3] text-zinc-900 font-serif">
 
       {/* ================= NAVBAR ================= */}
-      <header className="sticky top-0 z-50 bg-[#f5f5f3]/80 backdrop-blur border-b border-zinc-200">
+      {/* <header className="sticky top-0 z-50 bg-[#f5f5f3]/80 backdrop-blur border-b border-zinc-200">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
           <div className="flex items-center gap-12">
@@ -32,10 +32,10 @@ export default function Home() {
             <div className="w-8 h-8 rounded-full bg-zinc-300" />
           </div>
         </div>
-      </header>
+      </header> */}
 
       {/* ================= PAGE CONTENT ================= */}
-      <main className="max-w-6xl mx-auto px-6 py-12">
+      <main className=" mx-auto px-6 py-12">
 
         {/* ================= HERO ================= */}
         <section className="bg-black text-white rounded-md p-16 flex justify-between items-end mb-16 relative overflow-hidden">
