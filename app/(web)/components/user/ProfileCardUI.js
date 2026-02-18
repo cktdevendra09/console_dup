@@ -2,7 +2,7 @@
 
 export default function ProfileCardUI() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background-light dark:bg-background-dark p-6 text-slate-900 dark:text-slate-100">
+    <div className="">
       
       <div className="max-w-xl w-full rounded-xl overflow-hidden shadow-2xl bg-white/5 backdrop-blur-lg border border-white/10 hover:shadow-primary/5 transition-all duration-300">
         
