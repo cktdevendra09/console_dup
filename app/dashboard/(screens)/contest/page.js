@@ -114,17 +114,7 @@ export default function ContestDashboardPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="py-6 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 mt-auto px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
-          <p>© 2024 DevFlow. Building the future of developer talent.</p>
-          <div className="flex gap-8 font-medium">
-            <a className="hover:text-primary transition-colors" href="#">Contest Rules</a>
-            <a className="hover:text-primary transition-colors" href="#">FAQ</a>
-            <a className="hover:text-primary transition-colors" href="#">Support</a>
-          </div>
-        </div>
-      </footer>
+     
     </div>
   );
 }
