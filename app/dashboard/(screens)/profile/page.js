@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  PencilIcon, TrashIcon,
   CodeBracketIcon,
   ShareIcon,
   GlobeAltIcon,
@@ -12,12 +13,11 @@ import {
   DevicePhoneMobileIcon,
   CircleStackIcon,
   EllipsisVerticalIcon,
-  PencilSquareIcon,
+  PencilSquareIcon, BriefcaseIcon, PlusCircleIcon,
 } from "@heroicons/react/24/outline";
 
-
 import {
-  card,
+  cardClasses,
   input,
   label,
   heading,
@@ -25,6 +25,8 @@ import {
   secondaryButton,
   smallButton,
 } from "@/app/dashboard/components/Comman/DashboardUiUtility";
+import Link from "next/link";
+import { PROFILE_MENU } from "../../config/DashboardRoutes";
 
 
 
@@ -37,7 +39,7 @@ export default function ProfilePage() {
         <div className="lg:w-1/3 space-y-6">
 
           {/* Profile Card */}
-          <div className="relative bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] shadow-sm border border-slate-100 dark:border-slate-800 text-center">
+          <div className=" bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 transition-colors duration-300  text-center">
 
             {/* Edit Button */}
             <button className="absolute top-6 right-6 w-10 h-10 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-white transition-all duration-200 hover:scale-105 active:scale-95">
@@ -92,7 +94,7 @@ export default function ProfilePage() {
           </div>
 
           {/* Contact Info */}
-          <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] shadow-sm border border-slate-100 dark:border-slate-800">
+          <div className={cardClasses()}>
             <h3 className="text-lg font-bold mb-4">Contact Info</h3>
             <div className="space-y-4 text-sm text-slate-600 dark:text-slate-400">
               <div className="flex items-center gap-3">
@@ -113,7 +115,7 @@ export default function ProfilePage() {
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
 
-            <div className="bg-white dark:bg-slate-900 p-6 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm">
+            <div className={cardClasses()}>
               <p className="text-xs font-bold uppercase text-slate-500 mb-1">
                 Total Commits
               </p>
@@ -124,7 +126,7 @@ export default function ProfilePage() {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-slate-900 p-6 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm">
+            <div className={cardClasses()}>
               <p className="text-xs font-bold uppercase text-slate-500 mb-1">
                 Pull Requests
               </p>
@@ -135,7 +137,7 @@ export default function ProfilePage() {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-slate-900 p-6 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm">
+            <div className={cardClasses()}>
               <p className="text-xs font-bold uppercase text-slate-500 mb-1">
                 Code Reviews
               </p>
@@ -148,16 +150,91 @@ export default function ProfilePage() {
 
           </div>
 
-          {/* Contribution Activity */}
-          <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] shadow-sm border border-slate-100 dark:border-slate-800">
-            <h3 className="text-lg font-bold mb-4">Contribution Activity</h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-4">
-              2,415 contributions in the last year
-            </p>
+          <div className={cardClasses()}>
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-lg font-bold">
+                Education Overview
+              </h3>
+
+              <Link href={PROFILE_MENU.EDUCATION_ADD} className="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 hover:text-indigo-700 transition">
+
+                <PlusCircleIcon className="w-5 h-5" />
+
+                Add New
+              </Link>
+            </div>
+
+            <div className="space-y-6">
+
+              {/* Education Item 1 */}
+              <div className="flex justify-between items-start border-b border-slate-200 dark:border-slate-700 pb-5">
+
+                <div>
+                  <h4 className="font-semibold text-slate-800 dark:text-white">
+                    B.Tech in Computer Science
+                  </h4>
+
+                  <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                    XYZ University — Rudrapur, India
+                  </p>
+
+                  <p className="text-xs text-slate-500 mt-1">
+                    2018 – 2022
+                  </p>
+
+                  <p className="text-xs text-slate-500 mt-1">
+                    GPA: 8.5 / 10
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <button className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                    <PencilIcon className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+                  </button>
+
+                  <button className="p-2 rounded-lg hover:bg-red-100 dark:hover:bg-red-900 transition">
+                    <TrashIcon className="w-4 h-4 text-red-500" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Education Item 2 */}
+              <div className="flex justify-between items-start">
+
+                <div>
+                  <h4 className="font-semibold text-slate-800 dark:text-white">
+                    Senior Secondary (PCM)
+                  </h4>
+
+                  <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                    ABC School — Uttarakhand, India
+                  </p>
+
+                  <p className="text-xs text-slate-500 mt-1">
+                    2016 – 2018
+                  </p>
+
+                  <p className="text-xs text-slate-500 mt-1">
+                    Percentage: 85%
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <button className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                    <PencilIcon className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+                  </button>
+
+                  <button className="p-2 rounded-lg hover:bg-red-100 dark:hover:bg-red-900 transition">
+                    <TrashIcon className="w-4 h-4 text-red-500" />
+                  </button>
+                </div>
+              </div>
+
+            </div>
           </div>
 
           {/* Current Projects */}
-          <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] shadow-sm border border-slate-100 dark:border-slate-800">
+          {/* <div className={cardClasses()}>
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-lg font-bold">Current Projects</h3>
               <a className="text-sm font-semibold text-primary hover:underline">
@@ -219,6 +296,116 @@ export default function ProfilePage() {
                   </div>
                 );
               })}
+
+            </div>
+          </div> */}
+
+
+          <div className={cardClasses()}>
+
+
+
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-lg font-bold">
+                Work Experience
+              </h3>
+
+              <Link href={PROFILE_MENU.WORK_EXP_ADD} className="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 hover:text-indigo-700 transition">
+
+                <PlusCircleIcon className="w-5 h-5" />
+
+                Add New
+              </Link>
+            </div>
+
+
+            <div className="space-y-8">
+
+              {/* Experience Item 1 */}
+              <div className="flex justify-between items-start border-b border-slate-200 dark:border-slate-700 pb-6">
+
+                {/* Left Content */}
+                <div className="flex gap-4">
+
+                  <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-700">
+                    <BriefcaseIcon className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-800 dark:text-white">
+                      Frontend Developer
+                    </h4>
+
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                      Tech Solutions Pvt Ltd — Remote
+                    </p>
+
+                    <p className="text-xs text-slate-500 mt-1">
+                      Jan 2022 – Present
+                    </p>
+
+                    <p className="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+                      Developing modern web applications using React and Next.js.
+                      Improved UI performance by 30% and collaborated with backend
+                      teams to integrate REST APIs.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="flex items-center gap-3">
+                  <button className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                    <PencilIcon className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+                  </button>
+
+                  <button className="p-2 rounded-lg hover:bg-red-100 dark:hover:bg-red-900 transition">
+                    <TrashIcon className="w-4 h-4 text-red-500" />
+                  </button>
+                </div>
+
+              </div>
+
+              {/* Experience Item 2 */}
+              <div className="flex justify-between items-start">
+
+                <div className="flex gap-4">
+
+                  <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-700">
+                    <BriefcaseIcon className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-slate-800 dark:text-white">
+                      Web Development Intern
+                    </h4>
+
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                      StartupHub — Bangalore, India
+                    </p>
+
+                    <p className="text-xs text-slate-500 mt-1">
+                      Jun 2021 – Dec 2021
+                    </p>
+
+                    <p className="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+                      Assisted in building landing pages and dashboards.
+                      Optimized responsive layouts and contributed to improving
+                      accessibility compliance.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <button className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                    <PencilIcon className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+                  </button>
+
+                  <button className="p-2 rounded-lg hover:bg-red-100 dark:hover:bg-red-900 transition">
+                    <TrashIcon className="w-4 h-4 text-red-500" />
+                  </button>
+                </div>
+
+              </div>
 
             </div>
           </div>

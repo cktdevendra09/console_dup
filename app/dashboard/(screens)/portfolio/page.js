@@ -74,7 +74,7 @@ export default function ManageAssetsPage() {
             {projects.map((proj, idx) => (
               <div
                 key={idx}
-                className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden group hover:shadow-lg transition-all"
+                className="bg-white dark:bg-slate-800 rounded-2xl   shadow-sm border border-slate-200 dark:border-slate-700 transition-colors duration-300   overflow-hidden group hover:shadow-lg "
               >
                 {/* Image */}
                 <div className="relative aspect-video overflow-hidden">
@@ -98,7 +98,7 @@ export default function ManageAssetsPage() {
                 </div>
 
                 {/* Card Content */}
-                <div className="p-6">
+                <div className="p-6 pb-4">
                   <h3 className="font-bold text-lg mb-4">{proj.title}</h3>
 
                   <div className="flex items-center gap-2">
@@ -115,10 +115,6 @@ export default function ManageAssetsPage() {
                       Preview
                     </button>
 
-                    {/* Delete */}
-                    <button className="w-10 h-10 rounded-xl bg-red-50 dark:bg-red-900/20 text-red-500 hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors flex items-center justify-center">
-                      <TrashIcon className="w-4 h-4" />
-                    </button>
 
                   </div>
                 </div>

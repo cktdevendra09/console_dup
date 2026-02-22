@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 /* ---------- CARD ---------- */
-export const card = (extra) =>
+export const cardClasses = (extra) =>
   clsx(
     "bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 transition-colors duration-300",
     extra

@@ -9,17 +9,20 @@ import {
   EllipsisHorizontalIcon,
   FireIcon,
 } from "@heroicons/react/24/outline";
+import { cardClasses } from "../../components/Comman/DashboardUiUtility";
+import Link from "next/link";
+import { ARTICLE_MENU } from "../../config/DashboardRoutes";
 
 export default function ArticlesPage() {
   return (
-    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen py-10">
+    <div className=" ">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 px-4">
         
         {/* ================= LEFT COLUMN ================= */}
         <div className="flex-1 space-y-6">
           
           {/* Create Insight */}
-          <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
+          <div className={cardClasses()}>
             <div className="flex gap-4">
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbBvof1zvAxYBPJrD7nE4yPvNTqgt5XE6NFSXXKy1fmnM8Uitp1pv2aAYZLtz-KiC4QOrmNzveOmg3kLm_lCVjbMIryf-nSYfq6uGp1zwKzpP3sw-Y2BxO2dpJPmCoWXW1zzTLA8W8K6OEGbag7vjifsHppv0c7S-tIxLTFyQvQXoW713IBHIGk4uJ70hfa8g7nEH5Aq86H_-QcuX4qNnDCjbAeiHScaqczcgW_y6vHoHeRldMcITV5Q61IRvJaZakoFDarREM0Rg1"
@@ -77,9 +80,11 @@ export default function ArticlesPage() {
 
             {/* Content */}
             <div>
+              <Link href={ARTICLE_MENU.ARTICLE_DETAILS}>
               <h2 className="text-lg font-bold hover:text-primary transition cursor-pointer">
                 Mastering Micro-frontends with React and Module Federation
               </h2>
+              </Link>
 
               <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
                 Exploring how to scale large applications by breaking them down

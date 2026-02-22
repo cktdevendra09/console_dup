@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import {
-  card,
+  cardClasses,
   input,
   label,
   heading,
@@ -20,7 +20,7 @@ export default function ProfileAddEditPage() {
         <div className="max-w-3xl mx-auto px-6 py-10 space-y-6">
 
           {/* Profile Card */}
-          <div className={card()}>
+          <div className={cardClasses("relative   text-center")}>
             <div className="flex items-center gap-6">
               <div className="relative">
                 <div className="w-24 h-24 rounded-full border-4 border-black dark:border-slate-600 p-1">

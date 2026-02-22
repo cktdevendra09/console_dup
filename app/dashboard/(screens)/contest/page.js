@@ -10,11 +10,11 @@ import {
   MdBrush,    // replaced palette
   MdNotifications
 } from "react-icons/md";
+import { cardClasses } from "../../components/Comman/DashboardUiUtility";
 
 export default function ContestDashboardPage() {
   return (
-    <div className="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
-     
+    <div >    
 
       {/* Main Content */}
       <main className="flex-1 p-6 md:p-10 overflow-y-auto">
@@ -120,9 +120,9 @@ export default function ContestDashboardPage() {
 }
 
 // ContestCard Component
-function ContestCard({ icon, title, level, desc, prize, reminder }) {
+function ContestCard({ icon, title, level, desc, prize, reminder,}) {
   return (
-    <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-none transition-all duration-300 border-dashed">
+    <div className={cardClasses()}>
       <div className="flex items-start gap-4">
         <div className="w-14 h-14 rounded-2xl bg-gray-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
           {icon}

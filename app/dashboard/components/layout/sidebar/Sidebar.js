@@ -30,7 +30,6 @@ const MENU_SECTIONS = [
       { name: "Profile", href: USER_LINKS.PROFILE, icon: UserCircleIcon },
       { name: "Portfolio", href: USER_LINKS.PORTFOLIO, icon: BriefcaseIcon },
       { name: "Articale", href: USER_LINKS.TOPICS, icon: BookOpenIcon },
-      { name: "Doubts", href: USER_LINKS.DOUBTS, icon: QuestionMarkCircleIcon },
     ],
   },
   {
@@ -47,7 +46,7 @@ const MENU_SECTIONS = [
         icon: TrophyIcon,
       },
       {
-        name: "Projects & Assignments",
+        name: "My Contests",
         href: CODING_LEARNING.PROJECTS_ASSIGNMENTS,
         icon: ClipboardDocumentCheckIcon,
       },

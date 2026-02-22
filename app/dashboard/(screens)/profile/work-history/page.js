@@ -31,10 +31,6 @@ export default function QualificationsPage() {
                 Work Experience
               </h2>
             </div>
-
-            <button className="text-sm font-medium text-indigo-600 hover:text-indigo-700">
-              + Add New
-            </button>
           </div>
 
           {/* Experience Form */}

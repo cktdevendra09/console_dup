@@ -36,7 +36,7 @@ export const AUTH= {
 export const CODING_LEARNING = {
   DAILY_CHALLENGE: "/dashboard/challenge",
   CONTESTS_HACKATHONS: "/dashboard/contest",
-  PROJECTS_ASSIGNMENTS: "/dashboard/projects-assignments",
+  PROJECTS_ASSIGNMENTS: "/dashboard/my-contests",
 };
 
 export const SETTINGS = {
